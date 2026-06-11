@@ -1,0 +1,12 @@
+# Normalize line endings to LF for text; let Git auto-detect.
+* text=auto eol=lf
+
+# Binary assets — never normalize.
+*.webp binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.ico  binary
+*.mp4  binary
+*.woff2 binary
+*.svg  text eol=lf

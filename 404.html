@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · Goxune</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<style>html,body{margin:0;height:100%;background:#FAF4EA;color:#4A3526;font-family:system-ui,sans-serif;display:grid;place-items:center}</style>
+</head>
+<body>
+<p>Goxune…</p>
+<script>
+(function(){
+  var SUP=["es","en","eu"];
+  var seg=(location.pathname.split("/").filter(Boolean)[0]||"").toLowerCase();
+  var lang = SUP.indexOf(seg)!==-1 ? seg : null;
+  if(!lang){
+    try{var s=localStorage.getItem("gx_lang"); if(s&&SUP.indexOf(s)!==-1)lang=s;}catch(e){}
+    if(!lang){
+      var L=navigator.languages||[navigator.language||""];
+      for(var i=0;i<L.length;i++){var c=(L[i]||"").toLowerCase().slice(0,2);
+        if(c==="en"){lang="en";break;} if(c==="es"||c==="ca"||c==="gl"){lang="es";break;}}
+    }
+    lang=lang||"es";
+  }
+  location.replace("/"+lang+"/404.html");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "Goxune Okindegia Kafetegia",
+  "short_name": "Goxune",
+  "description": "Panadería, pastelería y cafetería en Bera, Navarra.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FAF4EA",
+  "theme_color": "#C46A2E",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

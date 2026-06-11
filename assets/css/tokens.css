@@ -1,0 +1,88 @@
+/* ============================================================
+   GOXUNE · Design Tokens
+   Obrador de pueblo — warm artisan bakery & café (Bera, Navarra)
+   ============================================================ */
+
+:root {
+  /* ---------- Color · warm artisan palette ---------- */
+  --c-cream:        #FAF4EA;   /* page paper */
+  --c-cream-deep:   #F2E8D7;   /* alt surface */
+  --c-flour:        #FFFCF7;   /* card / elevated */
+  --c-crust:        #C46A2E;   /* Goxune signature orange (logo) */
+  --c-crust-soft:   #E08A4A;
+  --c-crust-deep:   #A1521F;
+  --c-cocoa:        #4A3526;   /* primary text / espresso brown */
+  --c-cocoa-soft:   #6E5847;   /* secondary text */
+  --c-bark:         #2C1E15;   /* darkest / footer */
+  --c-olive:        #6B7350;   /* sage secondary accent */
+  --c-olive-soft:   #8B936F;
+  --c-wheat:        #E7C893;   /* highlight / gold */
+  --c-line:         #E3D6C2;   /* hairline borders */
+  --c-line-strong:  #D2BFA3;
+
+  /* ---------- Semantic tokens ---------- */
+  --bg:             var(--c-cream);
+  --bg-alt:         var(--c-cream-deep);
+  --surface:        var(--c-flour);
+  --text:           var(--c-cocoa);
+  --text-muted:     var(--c-cocoa-soft);
+  --accent:         var(--c-crust);
+  --accent-deep:    var(--c-crust-deep);
+  --accent-btn:     #AE5921;   /* AA-accessible orange for solid buttons (white text ≥4.5:1) */
+  --border:         var(--c-line);
+
+  /* ---------- Typography ---------- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body:    "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+  /* fluid type scale (clamp: min, vw, max) */
+  --fs-300: clamp(0.78rem, 0.76rem + 0.1vw, 0.84rem);
+  --fs-400: clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem);   /* body */
+  --fs-500: clamp(1.1rem, 1.02rem + 0.4vw, 1.3rem);
+  --fs-600: clamp(1.35rem, 1.2rem + 0.8vw, 1.85rem);
+  --fs-700: clamp(1.8rem, 1.5rem + 1.6vw, 2.9rem);
+  --fs-800: clamp(2.4rem, 1.9rem + 2.8vw, 4.3rem);
+  --fs-900: clamp(3rem, 2.2rem + 4.4vw, 6.2rem);          /* hero */
+
+  --lh-tight: 1.04;
+  --lh-snug:  1.22;
+  --lh-body:  1.65;
+
+  /* ---------- Spacing scale (8pt rhythm) ---------- */
+  --sp-1: 0.25rem; --sp-2: 0.5rem;  --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem;  --sp-6: 2rem;    --sp-7: 3rem;    --sp-8: 4rem;
+  --sp-9: 6rem;    --sp-10: 8rem;   --sp-11: 11rem;
+
+  /* ---------- Layout ---------- */
+  --container:      72rem;   /* 1152px */
+  --container-wide: 84rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 8px;
+  --radius:    16px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+
+  /* ---------- Elevation (warm shadows) ---------- */
+  --sh-1: 0 1px 2px rgba(74,53,38,.06), 0 2px 6px rgba(74,53,38,.05);
+  --sh-2: 0 4px 12px rgba(74,53,38,.08), 0 10px 30px rgba(74,53,38,.07);
+  --sh-3: 0 12px 28px rgba(74,53,38,.12), 0 26px 60px rgba(74,53,38,.1);
+  --sh-glow: 0 10px 40px rgba(196,106,46,.28);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(.16,.84,.44,1);
+  --ease-in-out: cubic-bezier(.65,.05,.36,1);
+  --dur-fast: .18s;
+  --dur: .32s;
+  --dur-slow: .6s;
+
+  --z-base:0; --z-raised:10; --z-nav:40; --z-overlay:60; --z-loader:100;
+}
+
+/* dark mode left intentionally as warm-light only — a bakery lives in daylight.
+   We still honor system pref for slightly deeper paper to reduce glare. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #F4EADB;          /* keep it warm, just a touch deeper */
+    --surface: #FBF5EC;
+  }
+}

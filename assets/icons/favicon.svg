@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Goxune">
+  <rect width="64" height="64" rx="15" fill="#C46A2E"/>
+  <!-- wheat sprig -->
+  <g transform="translate(32 8)" stroke="#FAF4EA" stroke-width="3.2" stroke-linecap="round" fill="none">
+    <path d="M0 48 L0 8"/>
+    <path d="M0 14 C-7 9 -12 11 -14 5"/><path d="M0 14 C7 9 12 11 14 5"/>
+    <path d="M0 26 C-7 21 -12 23 -14 17"/><path d="M0 26 C7 21 12 23 14 17"/>
+    <path d="M0 38 C-7 33 -12 35 -14 29"/><path d="M0 38 C7 33 12 35 14 29"/>
+  </g>
+</svg>

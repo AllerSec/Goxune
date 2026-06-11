@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="Goxune">
+  <g transform="translate(10 14)" stroke="#E7C893" stroke-width="3.4" stroke-linecap="round" fill="none">
+    <path d="M30 66 C30 44 30 30 30 14"/>
+    <g stroke-width="3">
+      <path d="M30 20 C22 14 16 16 14 10"/><path d="M30 20 C38 14 44 16 46 10"/>
+      <path d="M30 32 C22 26 16 28 14 22"/><path d="M30 32 C38 26 44 28 46 22"/>
+      <path d="M30 44 C22 38 16 40 14 34"/><path d="M30 44 C38 38 44 40 46 34"/>
+    </g>
+  </g>
+  <text x="74" y="66" font-family="Fraunces, Georgia, serif" font-size="56"
+        font-style="italic" font-weight="600" fill="#F2E8D7" letter-spacing="-1">Goxune</text>
+</svg>
