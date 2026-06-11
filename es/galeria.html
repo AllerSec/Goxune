@@ -50,6 +50,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
+  <div class="scrollbar" aria-hidden="true"><i data-scroll-progress></i></div>
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader__inner">
       <img class="loader__mark" src="../assets/icons/logo-goxune.svg" alt="Goxune" width="160" height="48">
@@ -157,9 +158,16 @@
     <section class="section">
       <div class="container">
         <div class="cta" data-reveal>
+          <span class="cta__deco" aria-hidden="true"><svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span>
           <h2>¿Nos vemos mañana a desayunar?</h2>
           <p>Café recién hecho, pan caliente y una sonrisa. Así empieza el día en Goxune.</p>
           <a class="btn btn--lg" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener" data-magnetic="0.2">Cómo llegar<svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="cta__hours" data-today-hours data-label="Hoy" hidden><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span></span></p>
         </div>
       </div>
     </section>
@@ -205,6 +213,10 @@
       </div>
     </div>
   </footer>
+  <div class="mobile-bar" data-mobile-bar>
+    <a class="mobile-bar__btn mobile-bar__btn--call" href="tel:+34948630235"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Llamar</span></a>
+    <a class="mobile-bar__btn" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="2"/></svg><span>Cómo llegar</span></a>
+  </div>
   <script src="../assets/js/vendor/gsap.min.js" defer></script>
   <script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="../assets/js/app.js" defer></script>

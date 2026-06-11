@@ -86,6 +86,61 @@
     }
   }
 
+  /* ---------------- 2b. Opening hours engine ---------------- */
+  // Mon-Thu: 07:30-13:30 / 17:00-20:30 · Fri-Sun: 07:30-13:30 / 17:00-21:00
+  const SCHEDULE = { wd: [["07:30", "13:30"], ["17:00", "20:30"]], we: [["07:30", "13:30"], ["17:00", "21:00"]] };
+  function todaySchedule(d) {
+    const day = d.getDay(); // 0 Sun .. 6 Sat
+    return day >= 1 && day <= 4 ? SCHEDULE.wd : SCHEDULE.we;
+  }
+
+  function handleOpenBadge() {
+    const badge = doc.querySelector("[data-open-badge]");
+    if (!badge) return;
+    const toMin = (t) => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+    const d = new Date();
+    const now = d.getHours() * 60 + d.getMinutes();
+    let openUntil = null, nextOpen = null;
+    for (const [start, end] of todaySchedule(d)) {
+      if (now >= toMin(start) && now < toMin(end)) { openUntil = end; break; }
+      if (now < toMin(start) && !nextOpen) nextOpen = start;
+    }
+    const txt = badge.querySelector("[data-open-text]");
+    if (openUntil) {
+      txt.textContent = badge.dataset.openTpl.replace("{t}", openUntil);
+      badge.classList.add("is-open");
+    } else {
+      txt.textContent = badge.dataset.closedTpl.replace("{t}", nextOpen || "07:30");
+    }
+    badge.hidden = false;
+  }
+
+  function handleCtaHours() {
+    doc.querySelectorAll("[data-today-hours]").forEach((el) => {
+      const sched = todaySchedule(new Date());
+      const txt = sched.map(([s, e]) => `${s}–${e}`).join(" · ");
+      el.querySelector("span").textContent = `${el.dataset.label}: ${txt}`;
+      el.hidden = false;
+    });
+  }
+
+  /* ---------------- 2c. Scroll progress + mobile bar ---------------- */
+  function handleScrollUI() {
+    const bar = doc.querySelector("[data-scroll-progress]");
+    const mbar = doc.querySelector("[data-mobile-bar]");
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const max = doc.documentElement.scrollHeight - window.innerHeight;
+      if (bar) bar.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+      if (mbar) mbar.classList.toggle("is-visible", window.scrollY > 480);
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  }
+
   /* ---------------- 3. Hours highlight (today) ---------------- */
   function handleHours() {
     const list = doc.querySelector("[data-hours]");
@@ -142,6 +197,51 @@
         yPercent: depth * 100,
         ease: "none",
         scrollTrigger: { trigger: el.closest("section") || el, start: "top bottom", end: "bottom top", scrub: true },
+      });
+    });
+
+    // masked word reveal on section headings (built with DOM methods, no innerHTML)
+    doc.querySelectorAll("main h2").forEach((h) => {
+      const words = h.textContent.trim().split(/\s+/);
+      h.textContent = "";
+      words.forEach((w, i) => {
+        const mask = doc.createElement("span");
+        mask.className = "wrd";
+        const inner = doc.createElement("span");
+        inner.textContent = w;
+        mask.appendChild(inner);
+        h.appendChild(mask);
+        if (i < words.length - 1) h.appendChild(doc.createTextNode(" "));
+      });
+      gsap.fromTo(h.querySelectorAll(".wrd > span"),
+        { yPercent: 110 },
+        { yPercent: 0, duration: 0.7, ease: "power3.out", stagger: 0.05,
+          scrollTrigger: { trigger: h, start: "top 88%", once: true } });
+    });
+
+    // feature images: slow settle from a slight zoom
+    gsap.utils.toArray(".feature__media img").forEach((im) => {
+      gsap.fromTo(im, { scale: 1.14 }, {
+        scale: 1, duration: 1.3, ease: "power2.out",
+        scrollTrigger: { trigger: im.closest(".feature__media"), start: "top 85%", once: true },
+      });
+    });
+
+    // count-up stats
+    doc.querySelectorAll("[data-countup]").forEach((el) => {
+      const target = parseFloat(el.dataset.countup);
+      const dec = parseInt(el.dataset.decimals || "0", 10);
+      const suffix = el.dataset.suffix || "";
+      const comma = el.dataset.comma === "1";
+      const state = { v: 0 };
+      gsap.to(state, {
+        v: target, duration: 1.6, ease: "power2.out",
+        scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        onUpdate() {
+          let s = state.v.toFixed(dec);
+          if (comma) s = s.replace(".", ",");
+          el.textContent = s + suffix;
+        },
       });
     });
 
@@ -280,6 +380,9 @@
   onReady(() => {
     handleNav();
     handleHours();
+    handleOpenBadge();
+    handleCtaHours();
+    handleScrollUI();
     handleGSAP();
     handleMagnetic();
     handleLightbox();

@@ -49,6 +49,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
+  <div class="scrollbar" aria-hidden="true"><i data-scroll-progress></i></div>
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader__inner">
       <img class="loader__mark" src="../assets/icons/logo-goxune.svg" alt="Goxune" width="160" height="48">
@@ -100,6 +101,7 @@
       </div>
       <div class="container hero__inner">
         <div class="hero__content">
+          <p class="open-badge" data-open-badge data-open-tpl="Abierto ahora · hasta las {t}" data-closed-tpl="Cerrado · abre a las {t}" hidden><i aria-hidden="true"></i><span data-open-text></span></p>
           <p class="eyebrow" style="color:var(--c-wheat)">Okindegia · Gozotegia · Kafetegia — Bera, Navarra</p>
           <h1><span>Pan recién hecho,</span> <span>café y</span> <span><em>buenos ratos</em></span></h1>
           <p class="hero__lead">Panadería, pastelería y cafetería con encanto en el corazón de Bera. Cantidades generosas, personal amable y un desayuno que carga las baterías.</p>
@@ -108,7 +110,10 @@
             <a class="btn btn--lg btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener" style="--btn-fg:var(--c-flour);border-color:rgba(255,252,247,.6)">Cómo llegar</a>
           </div>
           <div class="hero__meta">
-            <div class="hero__stat"><b>4,5★</b><span>Valoración Google</span></div>
+            <div class="hero__stat">
+              <b class="hero__rating"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17.5l1-5.8L1.5 7.6l5.9-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17.5l1-5.8L1.5 7.6l5.9-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17.5l1-5.8L1.5 7.6l5.9-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17.5l1-5.8L1.5 7.6l5.9-.8z"/></svg><span class="star--half"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17.5l1-5.8L1.5 7.6l5.9-.8z"/></svg></span></span>4,5</b>
+              <span>Valoración Google</span>
+            </div>
             <div class="hero__stat"><b>200+</b><span>reseñas</span></div>
             <div class="hero__stat"><b>Tu rincón</b><span>Bera, Navarra</span></div>
           </div>
@@ -116,6 +121,81 @@
       </div>
       <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Desliza</div>
     </section>
+
+    <!-- PRODUCT TICKER -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track"><span class="marquee__item">Pan recién horneado<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Café Aitona<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Croissants de mantequilla<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Tortilla casera<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Tartas y repostería<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Pintxos y tapas<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Desayunos generosos<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Pan recién horneado<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Café Aitona<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Croissants de mantequilla<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Tortilla casera<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Tartas y repostería<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Pintxos y tapas<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span><span class="marquee__item">Desayunos generosos<svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span></div>
+  </div>
 
     <!-- INTRO -->
     <section class="section">
@@ -144,6 +224,7 @@
         </div>
         <div class="grid grid--4" data-reveal-group>
         <article class="card" data-reveal>
+          <span class="card__num" aria-hidden="true">01</span>
           <div class="card__body">
             <span class="card__ico text-accent"><svg class="ico ico--bread" viewBox="0 0 48 48" fill="none" aria-hidden="true">
 <path d="M10 24a14 8 0 0 1 28 0v12a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4z" stroke="currentColor" stroke-width="2.4" fill="none"/>
@@ -154,6 +235,7 @@
           </div>
         </article>
         <article class="card" data-reveal>
+          <span class="card__num" aria-hidden="true">02</span>
           <div class="card__body">
             <span class="card__ico text-accent"><svg class="ico ico--croissant" viewBox="0 0 48 48" fill="none" aria-hidden="true">
 <g class="rock">
@@ -165,6 +247,7 @@
           </div>
         </article>
         <article class="card" data-reveal>
+          <span class="card__num" aria-hidden="true">03</span>
           <div class="card__body">
             <span class="card__ico text-accent"><svg class="ico ico--coffee" viewBox="0 0 48 48" fill="none" aria-hidden="true">
 <g class="steam" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
@@ -178,6 +261,7 @@
           </div>
         </article>
         <article class="card" data-reveal>
+          <span class="card__num" aria-hidden="true">04</span>
           <div class="card__body">
             <span class="card__ico text-accent"><svg class="ico ico--bar" viewBox="0 0 48 48" fill="none" aria-hidden="true">
 <path d="M12 14h20v24a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4z" stroke="currentColor" stroke-width="2.4" fill="none"/>
@@ -237,9 +321,9 @@
       <div class="container">
         <div class="band" data-reveal>
           <div class="band__grid">
-            <div class="band__stat"><b>4,5</b><span>Valoración Google</span></div>
-            <div class="band__stat"><b>200+</b><span>reseñas</span></div>
-            <div class="band__stat"><b>4</b><span>casas en una</span></div>
+            <div class="band__stat"><b data-countup="4.5" data-decimals="1" data-comma="1">4,5</b><span>Valoración Google</span></div>
+            <div class="band__stat"><b data-countup="200" data-suffix="+">200+</b><span>reseñas</span></div>
+            <div class="band__stat"><b data-countup="4">4</b><span>casas en una</span></div>
             <div class="band__stat"><b>€1–10</b><span>Precio por persona</span></div>
           </div>
         </div>
@@ -307,6 +391,28 @@
       </div>
     </section>
 
+    <!-- PHOTO STRIP -->
+    <section class="strip" aria-hidden="true">
+      <div class="strip__track">
+        <figure><img src="../assets/images/food/desayuno-tostada-tomate.webp" srcset="../assets/images/food/desayuno-tostada-tomate-960.webp 960w, ../assets/images/food/desayuno-tostada-tomate-1920.webp 1920w, ../assets/images/food/desayuno-tostada-tomate.webp 3060w" alt="Desayuno de tostada con tomate, aceite y café con leche en Goxune" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/croissants-artesanos.webp" srcset="../assets/images/stock/croissants-artesanos-960.webp 960w, ../assets/images/stock/croissants-artesanos-1920.webp 1920w, ../assets/images/stock/croissants-artesanos.webp 3840w" alt="Croissants recién hechos" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/interior/interior-relojes.webp" srcset="../assets/images/interior/interior-relojes-960.webp 960w, ../assets/images/interior/interior-relojes-1920.webp 1920w, ../assets/images/interior/interior-relojes.webp 3840w" alt="Interior de Goxune en Bera con paredes de ladrillo blanco y relojes vintage" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/food/tortilla-pan.webp" srcset="../assets/images/food/tortilla-pan-960.webp 960w, ../assets/images/food/tortilla-pan-1920.webp 1920w, ../assets/images/food/tortilla-pan.webp 3060w" alt="Pincho de tortilla de patata con pan en Goxune" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/bolleria-dulce.webp" srcset="../assets/images/stock/bolleria-dulce-960.webp 960w, ../assets/images/stock/bolleria-dulce-1920.webp 1920w, ../assets/images/stock/bolleria-dulce.webp 3840w" alt="Vitrina de bollería y pan recién horneado" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/food/cafe-aitona.webp" srcset="../assets/images/food/cafe-aitona-960.webp 960w, ../assets/images/food/cafe-aitona-1920.webp 1920w, ../assets/images/food/cafe-aitona.webp 3840w" alt="Taza de café Aitona en la terraza de Goxune" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/pan-variado.webp" srcset="../assets/images/stock/pan-variado-960.webp 960w, ../assets/images/stock/pan-variado-1920.webp 1920w, ../assets/images/stock/pan-variado.webp 3840w" alt="Variedad de panes artesanos de panadería" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/pasteleria-tarta.webp" srcset="../assets/images/stock/pasteleria-tarta-960.webp 960w, ../assets/images/stock/pasteleria-tarta-1920.webp 1920w, ../assets/images/stock/pasteleria-tarta.webp 3840w" alt="Porción de tarta de queso casera con café" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/food/desayuno-tostada-tomate.webp" srcset="../assets/images/food/desayuno-tostada-tomate-960.webp 960w, ../assets/images/food/desayuno-tostada-tomate-1920.webp 1920w, ../assets/images/food/desayuno-tostada-tomate.webp 3060w" alt="Desayuno de tostada con tomate, aceite y café con leche en Goxune" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/croissants-artesanos.webp" srcset="../assets/images/stock/croissants-artesanos-960.webp 960w, ../assets/images/stock/croissants-artesanos-1920.webp 1920w, ../assets/images/stock/croissants-artesanos.webp 3840w" alt="Croissants recién hechos" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/interior/interior-relojes.webp" srcset="../assets/images/interior/interior-relojes-960.webp 960w, ../assets/images/interior/interior-relojes-1920.webp 1920w, ../assets/images/interior/interior-relojes.webp 3840w" alt="Interior de Goxune en Bera con paredes de ladrillo blanco y relojes vintage" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/food/tortilla-pan.webp" srcset="../assets/images/food/tortilla-pan-960.webp 960w, ../assets/images/food/tortilla-pan-1920.webp 1920w, ../assets/images/food/tortilla-pan.webp 3060w" alt="Pincho de tortilla de patata con pan en Goxune" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/bolleria-dulce.webp" srcset="../assets/images/stock/bolleria-dulce-960.webp 960w, ../assets/images/stock/bolleria-dulce-1920.webp 1920w, ../assets/images/stock/bolleria-dulce.webp 3840w" alt="Vitrina de bollería y pan recién horneado" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/food/cafe-aitona.webp" srcset="../assets/images/food/cafe-aitona-960.webp 960w, ../assets/images/food/cafe-aitona-1920.webp 1920w, ../assets/images/food/cafe-aitona.webp 3840w" alt="Taza de café Aitona en la terraza de Goxune" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/pan-variado.webp" srcset="../assets/images/stock/pan-variado-960.webp 960w, ../assets/images/stock/pan-variado-1920.webp 1920w, ../assets/images/stock/pan-variado.webp 3840w" alt="Variedad de panes artesanos de panadería" sizes="340px" loading="lazy" decoding="async"></figure>
+        <figure><img src="../assets/images/stock/pasteleria-tarta.webp" srcset="../assets/images/stock/pasteleria-tarta-960.webp 960w, ../assets/images/stock/pasteleria-tarta-1920.webp 1920w, ../assets/images/stock/pasteleria-tarta.webp 3840w" alt="Porción de tarta de queso casera con café" sizes="340px" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
     <!-- LOCATION -->
     <section class="section">
       <div class="container">
@@ -347,9 +453,16 @@
     <section class="section">
       <div class="container">
         <div class="cta" data-reveal>
+          <span class="cta__deco" aria-hidden="true"><svg class="ico ico--wheat" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<g class="sway" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none">
+<path d="M24 42V12"/>
+<path d="M24 18c-5-3-9-2-11-6"/><path d="M24 18c5-3 9-2 11-6"/>
+<path d="M24 26c-5-3-9-2-11-6"/><path d="M24 26c5-3 9-2 11-6"/>
+<path d="M24 34c-5-3-9-2-11-6"/><path d="M24 34c5-3 9-2 11-6"/></g></svg></span>
           <h2>¿Nos vemos mañana a desayunar?</h2>
           <p>Café recién hecho, pan caliente y una sonrisa. Así empieza el día en Goxune.</p>
           <a class="btn btn--lg" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener" data-magnetic="0.2">Cómo llegar<svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="cta__hours" data-today-hours data-label="Hoy" hidden><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span></span></p>
         </div>
       </div>
     </section>
@@ -387,6 +500,10 @@
       </div>
     </div>
   </footer>
+  <div class="mobile-bar" data-mobile-bar>
+    <a class="mobile-bar__btn mobile-bar__btn--call" href="tel:+34948630235"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Llamar</span></a>
+    <a class="mobile-bar__btn" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="2"/></svg><span>Cómo llegar</span></a>
+  </div>
   <script src="../assets/js/vendor/gsap.min.js" defer></script>
   <script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="../assets/js/app.js" defer></script>
