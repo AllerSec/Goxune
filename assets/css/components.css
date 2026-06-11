@@ -116,8 +116,9 @@
 
 /* ---------------- Hero ---------------- */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
-/* top bleed: the parallax translates the bg down, so it must overshoot upward to stay covered */
-.hero__bg { position: absolute; inset: -16% 0 0; z-index: 0; }
+/* top bleed: the parallax translates the bg down, so it must overshoot upward to stay covered.
+   Kept minimal (matches data-parallax depth) so the image isn't visibly over-cropped. */
+.hero__bg { position: absolute; inset: -8% 0 0; z-index: 0; }
 .hero__bg video, .hero__bg img { width: 100%; height: 100%; object-fit: cover; }
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
@@ -145,9 +146,9 @@
 @keyframes scrollDot { 0%,100% { opacity: 0; transform: translate(-50%, 0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translate(-50%, 12px); } }
 
 /* page hero (interior pages, image bg) */
-.pagehero { position: relative; min-height: 56svh; display: flex; align-items: flex-end; overflow: hidden; }
+.pagehero { position: relative; min-height: 62svh; display: flex; align-items: flex-end; overflow: hidden; }
 /* top bleed for the parallax shift (see .hero__bg) */
-.pagehero__bg { position: absolute; inset: -14% 0 0; z-index: 0; }
+.pagehero__bg { position: absolute; inset: -7% 0 0; z-index: 0; }
 .pagehero__bg img { width: 100%; height: 100%; object-fit: cover; }
 .pagehero__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(44,30,21,.52) 0%, rgba(44,30,21,.18) 30%, rgba(250,244,234,.5) 60%, rgba(250,244,234,.96) 80%, var(--c-cream) 100%); }
 .pagehero__inner { position: relative; z-index: 2; padding-block: clamp(6rem,14vh,9rem) clamp(2rem,5vh,3.5rem); }
