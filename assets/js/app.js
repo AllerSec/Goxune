@@ -262,6 +262,7 @@
     if (!form) return;
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
       const ok = form.querySelector("[data-form-ok]");
       const btn = form.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.dataset.busy = "1"; }
