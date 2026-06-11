@@ -228,7 +228,8 @@
 
     const open = (i) => {
       current = i;
-      const src = items[i].querySelector("img").currentSrc || items[i].querySelector("img").src;
+      // use the src attribute (full-resolution base), not currentSrc (responsive pick)
+      const src = items[i].querySelector("img").src;
       imgEl.src = src;
       imgEl.alt = items[i].querySelector("img").alt || "";
       box.classList.add("is-open");
