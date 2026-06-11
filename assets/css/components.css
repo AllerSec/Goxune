@@ -300,6 +300,20 @@
 .review__stars svg { width: 16px; height: 16px; }
 .footer__social svg { width: 20px; height: 20px; }
 
+/* ---------------- Photo vibrancy ----------------
+   Subtle saturation/contrast lift on every photo (and the hero video)
+   so the food and the warm interior pop a little more. */
+.card__media img,
+.feature__media img,
+.gallery__item img,
+.strip img,
+.pagehero__bg img,
+.carousel__slide img,
+.carousel__slide video,
+.lightbox img {
+  filter: saturate(1.16) contrast(1.05) brightness(1.02);
+}
+
 /* ---------------- Scroll progress bar ---------------- */
 .scrollbar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: calc(var(--z-nav) + 1); pointer-events: none; }
 .scrollbar i { display: block; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--c-crust-soft), var(--c-crust)); }
