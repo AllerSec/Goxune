@@ -57,7 +57,7 @@
       <p class="loader__txt">Okindegia · Gozotegia · Kafetegia</p>
     </div>
   </div>
-  <header class="nav nav--overlay" data-nav>
+  <header class="nav" data-nav>
     <div class="container container--wide nav__inner">
       <a class="nav__brand" href="index.html" aria-label="Goxune — Hasiera">
         <img class="nav__logo nav__logo--dark" src="../assets/icons/logo-goxune.svg" alt="Goxune" width="160" height="48">
@@ -93,21 +93,16 @@
   </header>
   <main id="main" data-mouse-stage>
     <!-- HERO -->
-    <section class="hero" data-hero>
-      <div class="hero__bg" data-parallax="0.06">
-        <video autoplay muted loop playsinline poster="../assets/images/stock/hero-poster.jpg" aria-hidden="true">
-          <source src="../assets/video/hero-goxune-60fps.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="container hero__inner">
+    <section class="hero hero--split" data-hero>
+      <div class="container container--wide hero__inner">
         <div class="hero__content">
           <p class="open-badge" data-open-badge data-open-tpl="Orain irekita · {t} arte" data-closed-tpl="Itxita · irekiera: {t}" hidden><i aria-hidden="true"></i><span data-open-text></span></p>
-          <p class="eyebrow" style="color:var(--c-wheat)">Okindegia · Gozotegia · Kafetegia — Bera, Nafarroa</p>
+          <p class="eyebrow">Okindegia · Gozotegia · Kafetegia — Bera, Nafarroa</p>
           <h1><span>Ogi egin berria,</span> <span>kafea eta</span> <span><em>une goxoak</em></span></h1>
           <p class="hero__lead">Okindegi, gozotegi eta kafetegi xarmangarria Beraren bihotzean. Kantitate oparoak, langile atseginak eta indarra ematen duen gosaria.</p>
           <div class="hero__cta">
             <a class="btn btn--lg" href="carta.html" data-magnetic="0.2">Ikusi karta<svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a class="btn btn--lg btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener" style="--btn-fg:var(--c-flour);border-color:rgba(255,252,247,.6)">Nola iritsi</a>
+            <a class="btn btn--lg btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Goxune+Okindegia+Kafetegia+Bera" target="_blank" rel="noopener">Nola iritsi</a>
           </div>
           <div class="hero__meta">
             <div class="hero__stat">
@@ -116,6 +111,24 @@
             </div>
             <div class="hero__stat"><b>200+</b><span>iritzi</span></div>
             <div class="hero__stat"><b>Zure txokoa</b><span>Bera, Nafarroa</span></div>
+          </div>
+        </div>
+        <div class="hero__media" data-carousel>
+          <div class="carousel" aria-roledescription="carousel" aria-label="Goxune">
+          <div class="carousel__slide is-active">
+            <video autoplay muted loop playsinline poster="../assets/images/stock/hero-poster.jpg" aria-hidden="true">
+              <source src="../assets/video/hero-goxune-60fps.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel__slide"><img src="../assets/images/food/desayuno-tostada-tomate.webp" srcset="../assets/images/food/desayuno-tostada-tomate-960.webp 960w, ../assets/images/food/desayuno-tostada-tomate-1920.webp 1920w, ../assets/images/food/desayuno-tostada-tomate.webp 3060w" alt="Tomate, olio eta esnegain kafedun txigortua Goxunen gosaltzeko" sizes="(max-width:900px) 100vw, 45vw" loading="lazy" decoding="async"></div>
+          <div class="carousel__slide"><img src="../assets/images/interior/interior-relojes.webp" srcset="../assets/images/interior/interior-relojes-960.webp 960w, ../assets/images/interior/interior-relojes-1920.webp 1920w, ../assets/images/interior/interior-relojes.webp 3840w" alt="Goxuneren barrualdea Beran, adreilu zuriko hormekin eta erloju zaharrekin" sizes="(max-width:900px) 100vw, 45vw" loading="lazy" decoding="async"></div>
+          <div class="carousel__slide"><img src="../assets/images/food/cafe-aitona.webp" srcset="../assets/images/food/cafe-aitona-960.webp 960w, ../assets/images/food/cafe-aitona-1920.webp 1920w, ../assets/images/food/cafe-aitona.webp 3840w" alt="Aitona kafe katilua Goxuneren terrazan" sizes="(max-width:900px) 100vw, 45vw" loading="lazy" decoding="async"></div>
+          <div class="carousel__slide"><img src="../assets/images/stock/bolleria-dulce.webp" srcset="../assets/images/stock/bolleria-dulce-960.webp 960w, ../assets/images/stock/bolleria-dulce-1920.webp 1920w, ../assets/images/stock/bolleria-dulce.webp 3840w" alt="Opil eta ogi egin berrien erakusleihoa" sizes="(max-width:900px) 100vw, 45vw" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="carousel__nav">
+            <button class="carousel__btn" data-car-prev aria-label="Aurreko argazkia"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="carousel__dots"><button class="carousel__dot is-active" aria-label="Ikusi 1. argazkia" aria-current="true"></button><button class="carousel__dot" aria-label="Ikusi 2. argazkia"></button><button class="carousel__dot" aria-label="Ikusi 3. argazkia"></button><button class="carousel__dot" aria-label="Ikusi 4. argazkia"></button><button class="carousel__dot" aria-label="Ikusi 5. argazkia"></button></div>
+            <button class="carousel__btn" data-car-next aria-label="Hurrengo argazkia"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </div>
       </div>

@@ -141,6 +141,48 @@
     update();
   }
 
+  /* ---------------- 2d. Hero carousel ---------------- */
+  function handleCarousel() {
+    const root = doc.querySelector("[data-carousel]");
+    if (!root) return;
+    const slides = Array.from(root.querySelectorAll(".carousel__slide"));
+    const dots = Array.from(root.querySelectorAll(".carousel__dot"));
+    if (slides.length < 2) return;
+    let i = 0, timer = null;
+
+    const go = (n) => {
+      slides[i].classList.remove("is-active");
+      if (dots[i]) { dots[i].classList.remove("is-active"); dots[i].removeAttribute("aria-current"); }
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add("is-active");
+      if (dots[i]) { dots[i].classList.add("is-active"); dots[i].setAttribute("aria-current", "true"); }
+      const vid = slides[i].querySelector("video");
+      if (vid) vid.play().catch(() => {});
+    };
+    const next = () => go(i + 1);
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const start = () => { if (!prefersReduced && !timer) timer = setInterval(next, 4500); };
+    const restart = () => { stop(); start(); };
+
+    root.querySelector("[data-car-next]").addEventListener("click", () => { next(); restart(); });
+    root.querySelector("[data-car-prev]").addEventListener("click", () => { go(i - 1); restart(); });
+    dots.forEach((d, n) => d.addEventListener("click", () => { go(n); restart(); }));
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+    // touch swipe
+    let sx = null;
+    root.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener("touchend", (e) => {
+      if (sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); restart(); }
+      sx = null;
+    }, { passive: true });
+    start();
+  }
+
   /* ---------------- 3. Hours highlight (today) ---------------- */
   function handleHours() {
     const list = doc.querySelector("[data-hours]");
@@ -188,6 +230,9 @@
         .from("[data-hero] .hero__lead", { autoAlpha: 0, y: 24, duration: 0.7 }, "-=0.5")
         .from("[data-hero] .hero__cta > *", { autoAlpha: 0, y: 20, duration: 0.6, stagger: 0.1 }, "-=0.4")
         .from("[data-hero] .hero__stat", { autoAlpha: 0, y: 20, duration: 0.6, stagger: 0.1 }, "-=0.4");
+      if (doc.querySelector("[data-hero] .hero__media")) {
+        tl.from("[data-hero] .hero__media", { autoAlpha: 0, x: 48, duration: 0.9, ease: "power3.out" }, 0.3);
+      }
     }
 
     // parallax on [data-parallax]
@@ -383,6 +428,7 @@
     handleOpenBadge();
     handleCtaHours();
     handleScrollUI();
+    handleCarousel();
     handleGSAP();
     handleMagnetic();
     handleLightbox();
