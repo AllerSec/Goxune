@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="Goxune">
   <defs>
-    <linearGradient id="gx-ink" x1="0" y1="0" x2="1" y2="1">
+    <!-- userSpaceOnUse: an objectBoundingBox gradient cannot paint perfectly
+         straight strokes (zero-area bbox), which made the wheat stalk invisible -->
+    <linearGradient id="gx-ink" x1="0" y1="0" x2="320" y2="96" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#E08A4A"/>
       <stop offset="1" stop-color="#C46A2E"/>
     </linearGradient>
