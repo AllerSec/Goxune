@@ -151,6 +151,8 @@
     let i = 0, timer = null;
 
     const go = (n) => {
+      const oldVid = slides[i].querySelector("video");
+      if (oldVid) oldVid.pause();
       slides[i].classList.remove("is-active");
       if (dots[i]) { dots[i].classList.remove("is-active"); dots[i].removeAttribute("aria-current"); }
       i = (n + slides.length) % slides.length;

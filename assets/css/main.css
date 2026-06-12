@@ -164,3 +164,19 @@ strong { font-weight: 600; }
 }
 .text-accent { color: var(--accent-deep); }
 .muted { color: var(--text-muted); }
+
+/* ---------- Print (e.g. printing the menu) ---------- */
+@media print {
+  .nav, .footer, .mobile-bar, .marquee, .strip, .cta, .scrollbar, .loader,
+  .hero__scroll, .carousel__nav, .lightbox, .skip-link, .map-embed { display: none !important; }
+  body { background: #fff; }
+  body::before { display: none; }
+  [data-reveal], .wrd > span { opacity: 1 !important; transform: none !important; visibility: visible !important; }
+  .pagehero { min-height: auto; }
+  .pagehero__bg { display: none; }
+  .pagehero__inner { padding-block: 1rem; }
+  .pagehero h1, .pagehero p { color: #000; }
+  .menu-cat .grid--2 { grid-template-columns: 1fr; }
+  .menu-cat .feature__media { display: none; }
+  .section { padding-block: 1.5rem; }
+}
