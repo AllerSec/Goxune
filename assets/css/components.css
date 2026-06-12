@@ -398,7 +398,6 @@
 .hero__rating { display: flex; align-items: center; gap: .55rem; }
 .hero__rating .stars { display: inline-flex; gap: 2px; color: var(--c-wheat); }
 .hero__rating .stars svg { width: 17px; height: 17px; }
-.hero__rating .star--half { display: inline-flex; opacity: .42; }
 
 /* ---------------- Product ticker (marquee) ---------------- */
 .marquee { overflow: hidden; background: var(--c-bark); padding-block: .95rem; position: relative; z-index: 2; }
