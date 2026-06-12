@@ -1,13 +1,13 @@
 /* ============================================================
    GOXUNE · lang-redirect.js
    Root entry point. Detects visitor language from the browser
-   and redirects to /es/, /en/ or /eu/.
+   and redirects to /es/, /en/, /eu/ or /fr/.
    - Honors a previously chosen language (localStorage).
    - NEVER auto-selects Euskara (eu) by default; eu is opt-in only.
    - Defaults to Spanish (es) when locale is unknown.
    ============================================================ */
 (function () {
-  var SUPPORTED = ["es", "en", "eu"];
+  var SUPPORTED = ["es", "en", "eu", "fr"];
   var DEFAULT = "es";
 
   function pick() {
@@ -23,6 +23,7 @@
       var code = (langs[i] || "").toLowerCase().slice(0, 2);
       // Euskara is intentionally excluded from auto-detection.
       if (code === "en") return "en";
+      if (code === "fr") return "fr";
       if (code === "es" || code === "ca" || code === "gl") return "es"; // Spain locales → Spanish
     }
     // 3) fallback
