@@ -162,12 +162,15 @@
       if (vid) vid.play().catch(() => {});
     };
     const next = () => go(i + 1);
+    const every = parseInt(root.dataset.interval, 10) || 4500;
     const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
-    const start = () => { if (!prefersReduced && !timer) timer = setInterval(next, 4500); };
+    const start = () => { if (!prefersReduced && !timer) timer = setInterval(next, every); };
     const restart = () => { stop(); start(); };
 
-    root.querySelector("[data-car-next]").addEventListener("click", () => { next(); restart(); });
-    root.querySelector("[data-car-prev]").addEventListener("click", () => { go(i - 1); restart(); });
+    const btnNext = root.querySelector("[data-car-next]");
+    const btnPrev = root.querySelector("[data-car-prev]");
+    if (btnNext) btnNext.addEventListener("click", () => { next(); restart(); });
+    if (btnPrev) btnPrev.addEventListener("click", () => { go(i - 1); restart(); });
     dots.forEach((d, n) => d.addEventListener("click", () => { go(n); restart(); }));
     root.addEventListener("mouseenter", stop);
     root.addEventListener("mouseleave", start);
