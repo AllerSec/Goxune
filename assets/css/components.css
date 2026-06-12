@@ -102,7 +102,7 @@
 @media (max-width: 900px) {
   .nav__toggle { display: block; }
   .nav__menu {
-    position: fixed; inset: 0; padding: 6rem var(--gutter) 2rem;
+    position: fixed; top: 0; left: 0; right: 0; height: 100dvh; padding: 6rem var(--gutter) 2rem;
     background: var(--c-cream); display: flex; flex-direction: column; gap: var(--sp-5);
     transform: translateX(100%); transition: transform var(--dur-slow) var(--ease-out);
     overflow-y: auto; overscroll-behavior: contain;
