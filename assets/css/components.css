@@ -535,6 +535,14 @@ main { counter-reset: menucat; }
   .hero__stamp { display: none; }
   .hero--immersive .hero__scroll { display: none; }
   .hero--immersive .hero__meta { gap: var(--sp-5); }
+  /* diagonal veil is tuned for wide desktop photos; on narrow/tall mobile
+     screens too much bright photo shows through behind the text, so add a
+     stronger, mostly-vertical veil to guarantee contrast for the type. */
+  .hero--immersive .hero__veil {
+    background:
+      linear-gradient(0deg, rgba(20,12,7,.92) 0%, rgba(20,12,7,.62) 42%, rgba(20,12,7,.28) 68%, rgba(20,12,7,.15) 100%),
+      linear-gradient(180deg, rgba(20,12,7,.55) 0%, transparent 30%);
+  }
 }
 
 /* ---------------- Marquee XXL: alternating filled / outlined ------------- */
