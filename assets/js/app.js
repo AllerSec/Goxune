@@ -25,25 +25,30 @@
     const bar = loader.querySelector(".loader__bar i");
     let p = 0;
     const tick = () => {
-      p = Math.min(100, p + Math.random() * 18 + 6);
+      p = Math.min(100, p + Math.random() * 22 + 10);
       if (bar) bar.style.width = p + "%";
-      if (p < 100) setTimeout(tick, 130);
+      if (p < 100) setTimeout(tick, 70);
     };
     tick();
 
+    let done = false;
     const finish = () => {
+      if (done) return;
+      done = true;
       sessionStorage.setItem("gx_visited", "1");
       if (bar) bar.style.width = "100%";
       setTimeout(() => {
         loader.classList.add("is-done");
         doc.body.style.overflow = "";
         loader.addEventListener("transitionend", () => loader.setAttribute("hidden", ""), { once: true });
-      }, 380);
+        // fallback in case transitionend never fires (reduced motion)
+        setTimeout(() => loader.setAttribute("hidden", ""), 700);
+      }, 200);
     };
     doc.body.style.overflow = "hidden";
-    window.addEventListener("load", () => setTimeout(finish, 650));
+    window.addEventListener("load", () => setTimeout(finish, 200));
     // hard safety timeout
-    setTimeout(finish, 4000);
+    setTimeout(finish, 2500);
   }
 
   /* ---------------- 2. Navigation ---------------- */
@@ -176,6 +181,8 @@
     root.addEventListener("mouseleave", start);
     root.addEventListener("focusin", stop);
     root.addEventListener("focusout", start);
+    // don't rotate (and burn battery) while the tab is in the background
+    doc.addEventListener("visibilitychange", () => (doc.hidden ? stop() : start()));
     // touch swipe
     let sx = null;
     root.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
@@ -185,7 +192,7 @@
       if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); restart(); }
       sx = null;
     }, { passive: true });
-    start();
+    if (!doc.hidden) start();
   }
 
   /* ---------------- 3. Hours highlight (today) ---------------- */
@@ -226,9 +233,11 @@
       });
     });
 
-    // hero entrance timeline (runs after loader on home)
+    // hero entrance timeline (runs after loader on home).
+    // Skipped in hidden/background tabs: rAF is frozen there, so a .from()
+    // timeline would leave the hero content invisible until refocus.
     const hero = doc.querySelector("[data-hero]");
-    if (hero) {
+    if (hero && !doc.hidden) {
       const tl = gsap.timeline({ delay: sessionStorage.getItem("gx_visited") ? 0.1 : 0.55 });
       tl.from("[data-hero] .eyebrow", { autoAlpha: 0, y: 20, duration: 0.7, ease: "power2.out" })
         .from("[data-hero] h1 > span", { autoAlpha: 0, yPercent: 110, duration: 0.95, ease: "power4.out", stagger: 0.12 }, "-=0.3")
@@ -308,10 +317,10 @@
 
     // safety net: never leave above-the-fold content invisible
     setTimeout(() => {
-      doc.querySelectorAll("[data-reveal]").forEach((el) => {
+      doc.querySelectorAll("[data-reveal], [data-hero] .eyebrow, [data-hero] h1 > span, [data-hero] .hero__lead, [data-hero] .hero__cta > *, [data-hero] .hero__stat").forEach((el) => {
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight && getComputedStyle(el).opacity === "0") {
-          gsap.to(el, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" });
+          gsap.to(el, { autoAlpha: 1, y: 0, yPercent: 0, duration: 0.6, ease: "power2.out", overwrite: true });
         }
       });
     }, 1600);
