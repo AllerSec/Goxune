@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://goxune.es/sitemap.xml
+Sitemap: https://goxunekafetegia.com/sitemap.xml

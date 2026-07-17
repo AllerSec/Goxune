@@ -44,7 +44,7 @@ robots.txt · sitemap.xml · site.webmanifest · 404.html · .nojekyll
 
 1. Sube **el contenido de esta carpeta** a la raíz de un repositorio.
 2. Settings → Pages → Deploy from branch → `main` / `root`.
-3. (Opcional) Dominio propio: añade un archivo `CNAME` con `goxune.es` y configura el DNS.
+3. (Opcional) Dominio propio: añade un archivo `CNAME` con `goxunekafetegia.com` y configura el DNS.
 
 > Si se usa un dominio propio en la raíz, las rutas absolutas (`/es/`, `/assets/`)
 > funcionan directamente. Para un subpath (`usuario.github.io/repo/`), sirve el sitio
